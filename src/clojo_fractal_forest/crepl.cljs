@@ -1,8 +1,7 @@
-(ns crepl.svg.fractal
-  (:require [reagent.core :as r]
-            crepl.atom-sync))
+(ns clojo-fractal-forest.crepl
+  (:require [reagent.core :as r]))
 
-(def max-depth (crepl.atom-sync/atom-sync 10))
+(def max-depth (r/atom 10))
 
 (def PI (aget js/Math "PI"))
 (def sin (aget js/Math "sin"))
@@ -45,9 +44,9 @@
   [:div
    [fractal]
    [slider]])
-
-(r/render-component [svg-component]
-                    (.getElementById js/document "app"))(comment ;; eval'd by Guest 68733 =>
-#object[t [object Object]]
-)
-
+;
+;(r/render-component [svg-component]
+;                    (.getElementById js/document "app"))(comment ;; eval'd by Guest 68733 =>
+;#object[t [object Object]]
+;)
+;
